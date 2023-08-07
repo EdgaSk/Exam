@@ -5,28 +5,28 @@ subtraction() - priima du skaičius ir grąžina jų skirtumą.
 multiplication() - priima du skaičius ir grąžina jų daugybos rezultatą;
 division() - priima du skaičius ir grąžina jų dalybos rezultatą;
 ------------------------------------------------------------------------------------ */
-class Calculator {
-    sum(a, b) {
-      return a + b;
+function Calculator() {
+  this.sum = function (a, b) {
+    return a + b;
+  };
+
+  this.subtraction = function (a, b) {
+    return a - b;
+  };
+
+  this.multiplication = function (a, b) {
+    return a * b;
+  };
+
+  this.division = function (a, b) {
+    if (b !== 0) {
+      return a / b;
+    } else {
+      throw new Error('Division by zero is not allowed.');
     }
-  
-    subtraction(a, b) {
-      return a - b;
-    }
-  
-    multiplication(a, b) {
-      return a * b;
-    }
-  
-    division(a, b) {
-      if (b !== 0) {
-        return a / b;
-      } else {
-        throw new Error('Division by zero is not allowed.');
-      }
-    }
+  };
 }
-  
+
 const calculator = new Calculator();
 console.log(calculator.sum(5, 3));
 console.log(calculator.subtraction(5, 3));
